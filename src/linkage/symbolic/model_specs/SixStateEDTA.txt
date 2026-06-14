@@ -1,0 +1,22 @@
+equilibria:
+    C + E->EC; KE
+    A -> I; KI
+    A + C -> AC1; K1
+    AC1 + C -> AC2; K2
+    AC2 + C -> AC3; K3
+    AC3 + C -> AC4; K4
+
+species:
+    ET = E + EC
+    AT = I + A + AC1 + AC2 + AC3 + AC4
+    CT = C + EC + AC1 + 2*AC2 + 3*AC3 + 4*AC4
+
+reparameterize:
+    K1 = 2 * k_high
+    K2 = k_high / 2
+    K3 = 2 * k_low
+    K4 = k_low / 2
+    dH_1 = dH_high
+    dH_2 = dH_high
+    dH_3 = dH_low
+    dH_4 = dH_low
